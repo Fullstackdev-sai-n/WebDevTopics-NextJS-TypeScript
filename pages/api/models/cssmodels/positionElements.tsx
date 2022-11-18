@@ -1,7 +1,6 @@
-import { Schema, model, connect } from "mongoose";
-import json from "./test.json";
+import mongoose, { Document, model, Model, Schema } from "mongoose";
 
-interface ICSS {
+export interface IPositioningElements extends Document {
 	title: String;
 	info: String;
 	postionPropValues: String;
@@ -10,15 +9,21 @@ interface ICSS {
 	absolutedesc: String;
 	fixeddesc: String;
 	stickydesc: String;
-	description: {
-		title: String;
-		textList: [String];
-		text: String;
-	};
-	examples: [Object];
+	description: { title: String; textList: [String]; text: String };
+	examples: [
+		{
+			title: String;
+			text: String;
+			codeHtml: String;
+			codeCSS: String;
+			result: {
+				imageUrl: String;
+			};
+		}
+	];
 }
 
-const cssSchema = new Schema<ICSS>({
+const PositioningElementsSchema: Schema = new mongoose.Schema({
 	title: String,
 	info: String,
 	postionPropValues: String,
@@ -45,17 +50,6 @@ const cssSchema = new Schema<ICSS>({
 	],
 });
 
-const Css = model<ICSS>("cssone", cssSchema);
-
-run().catch((err) => console.log(err));
-
-async function run() {
-	// 4. Connect to MongoDB
-	await connect(
-		"mongodb+srv://sainathdigi:saibaba1987@cluster0.7i7clvv.mongodb.net/CSSPage"
-	);
-	console.log(json);
-
-	const css = new Css(json);
-	await css.save();
-}
+export const PositioningElementsModel: Model<IPositioningElements> =
+	mongoose.models.postionElement ||
+	model("postionElement", PositioningElementsSchema);
