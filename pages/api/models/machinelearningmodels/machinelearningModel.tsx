@@ -2,6 +2,7 @@ import mongoose, { Document, model, Model, Schema } from "mongoose";
 
 export interface IMachineLearning extends Document {
 	title: String;
+	heroImage: String;
 	Introduction: String;
 	types: String;
 	articleOne: String;
@@ -11,6 +12,7 @@ export interface IMachineLearning extends Document {
 
 const MachineLearningSchema: Schema = new mongoose.Schema({
 	title: String,
+	heroImage: String,
 	Introduction: String,
 	types: String,
 	articleOne: String,

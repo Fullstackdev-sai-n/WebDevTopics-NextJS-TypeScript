@@ -1,11 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextApiResponse } from "next";
+import { NextRequest } from "next/server";
 import { dbConnect } from "./middleware/dbConnect";
 import { WCustomElementModel } from "./models/webcomponentmodels/wcCustomModel";
 
-export default async function handler(
-	req: NextRequest,
-	res: NextResponse | any
-) {
+export default async function handler(req: NextRequest, res: NextApiResponse) {
 	const { method } = req;
 
 	await dbConnect();
