@@ -1,7 +1,7 @@
 import React from "react";
 import NextHead from "../../utils/NextHead";
-import { GetStaticProps } from "next";
-import { InferGetStaticPropsType } from "next";
+import { GetServerSideProps } from "next";
+import { InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 
@@ -14,7 +14,7 @@ export interface IWC {
 
 function WebComponents({
 	content,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const router = useRouter();
 	if (!router.isFallback && !content) {
 		return <ErrorPage statusCode={404} />;
@@ -45,7 +45,7 @@ function WebComponents({
 	);
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	const res = await fetch("http://localhost:3000/api/webcomponents-page");
 	const content = await res.json();
 	return {

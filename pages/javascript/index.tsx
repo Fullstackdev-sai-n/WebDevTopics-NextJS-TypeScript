@@ -1,15 +1,15 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./adEventListenerpage.module.css";
-import { GetStaticProps } from "next";
-import { InferGetStaticPropsType } from "next";
+import { GetServerSideProps } from "next";
+import { InferGetServerSidePropsType } from "next";
 import NextHead from "../../utils/NextHead";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 
 function AdEventListener({
 	content,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const router = useRouter();
 	if (!router.isFallback && !content) {
 		return <ErrorPage statusCode={404} />;
@@ -73,7 +73,7 @@ function AdEventListener({
 	);
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 	console.log(context);
 	const res = await fetch("http://localhost:3000/api/javascript-page");
 	const content = await res.json();

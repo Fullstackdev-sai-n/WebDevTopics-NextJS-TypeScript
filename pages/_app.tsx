@@ -5,10 +5,27 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import NProgress from "nprogress";
 import Loading from "../components/Loading";
+import "../node_modules/nprogress/nprogress.css";
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [isLoading, setIsLoading] = useState(false);
 	const router = useRouter();
+
+	useEffect(() => {
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker.register("/ServiceWorker.js").then(
+				function (registration) {
+					console.log(
+						"Service Worker Registered Successfully",
+						registration.scope
+					);
+				},
+				function (err) {
+					console.log("Error while registering service worker:", err);
+				}
+			);
+		}
+	}, []);
 
 	useEffect(() => {
 		const handleStart = (url: string) => {

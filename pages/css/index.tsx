@@ -1,8 +1,8 @@
 import styles from "./position-elements.module.css";
 import React from "react";
 import Image from "next/image";
-import { GetStaticProps } from "next";
-import { InferGetStaticPropsType } from "next";
+import { GetServerSideProps } from "next";
+import { InferGetServerSidePropsType } from "next";
 import NextHead from "../../utils/NextHead";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
@@ -107,7 +107,7 @@ export interface IEntry {
 
 function PositionElements({
 	posts,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const router = useRouter();
 	if (!router.isFallback && !posts) {
 		return <ErrorPage statusCode={404} />;
@@ -123,7 +123,7 @@ function PositionElements({
 				type="article"
 			/>
 			<section>
-				{posts.data.map(
+				{posts?.data?.map(
 					(entry: IEntry, index: React.Key | null | undefined) => (
 						<div key={index}>
 							<h1 className="text-4xl sm:text-5xl">{entry.title}</h1>
@@ -222,7 +222,7 @@ function PositionElements({
 	);
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	const res = await fetch("http://localhost:3000/api/css-page");
 	const posts = await res.json();
 	return {

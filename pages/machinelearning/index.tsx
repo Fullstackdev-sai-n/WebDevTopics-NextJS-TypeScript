@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
-import { GetStaticProps } from "next";
-import { InferGetStaticPropsType } from "next";
+import { GetServerSideProps } from "next";
+import { InferGetServerSidePropsType } from "next";
 import NextHead from "../../utils/NextHead";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
@@ -19,7 +19,7 @@ export interface IMLEntry {
 
 function MachineLearning({
 	content,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const router = useRouter();
 	if (!router.isFallback && !content) {
 		return <ErrorPage statusCode={404} />;
@@ -76,7 +76,7 @@ function MachineLearning({
 	);
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	const res = await fetch("http://localhost:3000/api/machinelearning-page");
 	const content = await res.json();
 	return {
