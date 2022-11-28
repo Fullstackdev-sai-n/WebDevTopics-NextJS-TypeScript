@@ -3,7 +3,6 @@ import React from "react";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import CloseIcon from "@mui/icons-material/Close";
 import styles from "./header.module.css";
-import { useRouter } from "next/router";
 
 function Header() {
 	const [clickEvent, setClickEvent] = React.useState(false);

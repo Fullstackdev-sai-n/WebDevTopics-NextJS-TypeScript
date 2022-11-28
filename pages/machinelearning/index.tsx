@@ -77,7 +77,9 @@ function MachineLearning({
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-	const res = await fetch("http://localhost:3000/api/machinelearning-page");
+	const res = await fetch(
+		`https://stackwebdev.vercel.app/api/machinelearning-page`
+	);
 	const content = await res.json();
 	return {
 		props: { content },
