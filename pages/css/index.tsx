@@ -3,9 +3,9 @@ import React from "react";
 import Image from "next/image";
 import { GetServerSideProps } from "next";
 import { InferGetServerSidePropsType } from "next";
-import NextHead from "../../utils/NextHead";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
+import NextHead from "../../utils/NextHead";
 
 export interface IEntry {
 	title:
@@ -109,6 +109,7 @@ function PositionElements({
 	posts,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const router = useRouter();
+
 	if (!router.isFallback && !posts) {
 		return <ErrorPage statusCode={404} />;
 	}
@@ -223,7 +224,8 @@ function PositionElements({
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-	const res = await fetch("http://localhost:3000/api/css-page");
+	console.log(process.env.NEXT_PUBLIC_BASE_URL);
+	const res = await fetch(`https://stackwebdev.vercel.app/api/css-page`);
 	const posts = await res.json();
 	return {
 		props: { posts },

@@ -46,7 +46,9 @@ function WebComponents({
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-	const res = await fetch("http://localhost:3000/api/webcomponents-page");
+	const res = await fetch(
+		"https://stackwebdev.vercel.app/api/webcomponents-page"
+	);
 	const content = await res.json();
 	return {
 		props: { content },

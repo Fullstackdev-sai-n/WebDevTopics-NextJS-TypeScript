@@ -75,7 +75,7 @@ function AdEventListener({
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	console.log(context);
-	const res = await fetch("http://localhost:3000/api/javascript-page");
+	const res = await fetch(`https://stackwebdev.vercel.app/api/javascript-page`);
 	const content = await res.json();
 	return {
 		props: { content },
