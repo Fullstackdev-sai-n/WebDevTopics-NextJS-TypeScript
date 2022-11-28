@@ -9,11 +9,15 @@ export default function Document() {
 		<Html>
 			<Head>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
+<<<<<<< HEAD
 				<link
 					rel="preconnect"
 					href="https://fonts.gstatic.com"
 					crossOrigin="true"
 				/>
+=======
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+>>>>>>> 9c67a747da1ccaf65478ed6c671c659afea648d2
 				<link
 					href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
 					rel="stylesheet"
