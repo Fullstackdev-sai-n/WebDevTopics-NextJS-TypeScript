@@ -224,8 +224,8 @@ function PositionElements({
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-	console.log(process.env.NEXT_PUBLIC_BASE_URL);
-	const res = await fetch(`https://stackwebdev.vercel.app/api/css-page`);
+	const baseUrl = process.env.HOST;
+	const res = await fetch(`${baseUrl}/api/css-page`);
 	const posts = await res.json();
 	return {
 		props: { posts },

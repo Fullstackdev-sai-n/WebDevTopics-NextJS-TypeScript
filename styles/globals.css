@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "Inter", san-serif;
+	src: url("/assets/Inter/Inter-ExtraBold.ttf");
+	src: url("/assets/Inter/Inter-Bold.ttf");
+	src: url("/assets/Inter/Inter-ExtraBold.ttf");
+	src: url("/assets/Inter/Inter-ExtraLight.ttf");
+	src: url("/assets/Inter/Inter-ExtraBold.ttf");
+	src: url("/assets/Inter/Inter-Light.ttf");
+	src: url("/assets/Inter/Inter-Medium.ttf");
+	src: url("/assets/Inter/Inter-Regular.ttf");
+	src: url("/assets/Inter/Inter-SemiBold.ttf");
+	src: url("/assets/Inter/Inter-Thin.ttf");
+}
+
 html,
 body {
 	padding: 0;
