@@ -4,6 +4,7 @@ const nextConfig = {
 	swcMinify: true,
 	images: {
 		domains: ["stack-web-dv.s3.ap-south-1.amazonaws.com"],
+		
 	},
 };
 
