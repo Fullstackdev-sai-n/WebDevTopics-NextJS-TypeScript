@@ -1,0 +1,11 @@
+Model Information:
+* title:	RUNING CHARACTERS
+* source:	https://sketchfab.com/3d-models/runing-characters-9436db21490a48adbb3b6684f6745291
+* author:	NORBERTO-3D (https://sketchfab.com/norberto3d)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "RUNING CHARACTERS" (https://sketchfab.com/3d-models/runing-characters-9436db21490a48adbb3b6684f6745291) by NORBERTO-3D (https://sketchfab.com/norberto3d) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

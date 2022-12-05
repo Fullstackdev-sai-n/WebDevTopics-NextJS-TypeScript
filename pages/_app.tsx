@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import NProgress from "nprogress";
 import Loading from "../components/Loading";
 import "../node_modules/nprogress/nprogress.css";
+import Script from "next/script";
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [isLoading, setIsLoading] = useState(false);
@@ -54,6 +55,19 @@ export default function App({ Component, pageProps }: AppProps) {
 	}, [router]);
 	return (
 		<>
+			{/* <Script
+				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+				strategy="lazyOnload"
+			/>
+			<Script strategy="lazyOnload" id="google-analytics">
+				{`  window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+			  
+				gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS})
+				`}
+			</Script> */}
+
 			{isLoading ? (
 				<Loading />
 			) : (

@@ -3,7 +3,7 @@ import React from "react";
 import { GetStaticProps } from "next";
 
 export const getStaticProps: GetStaticProps = async () => {
-	const res: any = await fetch("http://localhost:3000/api/typescript-errors");
+	const res: any = await fetch(`${process.env.HOST}/api/typescript-errors`);
 	const data: any = await res.json();
 
 	return {
@@ -28,7 +28,7 @@ function index({ response }: any) {
 									TypeScriptError:
 								</span>{" "}
 								<span className="text-xl sm:text-2xl font-normal text-blue-400">
-									<Link href={"/typescript-errors/" + entry._id.toString()}>
+									<Link href={"/typescript-errors/" + entry._id}>
 										{entry.title}
 									</Link>
 								</span>
