@@ -1,0 +1,11 @@
+Model Information:
+* title:	Holographic Computer
+* source:	https://sketchfab.com/3d-models/holographic-computer-0a51f98ffeab420889c0c03b88fa2f42
+* author:	Tefloman (https://sketchfab.com/lucas.avendano13)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Holographic Computer" (https://sketchfab.com/3d-models/holographic-computer-0a51f98ffeab420889c0c03b88fa2f42) by Tefloman (https://sketchfab.com/lucas.avendano13) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

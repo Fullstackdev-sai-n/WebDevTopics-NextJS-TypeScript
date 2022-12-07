@@ -1,0 +1,340 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 184,
+      "max": [
+        -37.019962310791016,
+        218.9944305419922,
+        60.64249801635742
+      ],
+      "min": [
+        -63.87649154663086,
+        183.291259765625,
+        19.188217163085938
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 2208,
+      "componentType": 5126,
+      "count": 184,
+      "max": [
+        0.9794739484786987,
+        1.0,
+        0.920031726360321
+      ],
+      "min": [
+        -0.979897677898407,
+        -1.0,
+        -0.9585762619972229
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 300,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 4416,
+      "componentType": 5126,
+      "count": 102,
+      "max": [
+        -36.99446105957031,
+        216.35305786132813,
+        59.3602409362793
+      ],
+      "min": [
+        -63.92806625366211,
+        186.8785858154297,
+        20.084142684936523
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 5640,
+      "componentType": 5126,
+      "count": 102,
+      "max": [
+        1.0,
+        0.8863043785095215,
+        0.510459840297699
+      ],
+      "min": [
+        -1.0,
+        -0.8863107562065125,
+        -0.510463535785675
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1200,
+      "componentType": 5125,
+      "count": 162,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 6864,
+      "componentType": 5126,
+      "count": 18,
+      "max": [
+        -42.79313659667969,
+        215.89108276367188,
+        58.574710845947266
+      ],
+      "min": [
+        -58.129398345947266,
+        191.43429565429688,
+        20.862363815307617
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 7080,
+      "componentType": 5126,
+      "count": 18,
+      "max": [
+        -6.00189991928346e-07,
+        0.43016597628593445,
+        0.9053130745887756
+      ],
+      "min": [
+        -6.284837468228943e-07,
+        0.4247448742389679,
+        -0.9027498960494995
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1848,
+      "componentType": 5125,
+      "count": 42,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "sirkitree (https://sketchfab.com/sirkitree)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/alien-computer-bb422470b5ae426390424dc40d772717",
+      "title": "Alien Computer"
+    },
+    "generator": "Sketchfab-12.66.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 2016,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7296,
+      "byteOffset": 2016,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 9312,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "material_15___10864",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.811765,
+          0.847059,
+          0.862745,
+          1.0
+        ],
+        "roughnessFactor": 0.43121189019999995
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0.6408640739276088,
+        0.8990541196571736,
+        0.3411793673752176
+      ],
+      "name": "material_9___10864",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.545098,
+          0.764706,
+          0.290196,
+          1.0
+        ],
+        "metallicFactor": 0.2578125,
+        "roughnessFactor": 0.3153582317
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "material_23___10864",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.101961,
+          0.101961,
+          0.101961,
+          1.0
+        ],
+        "metallicFactor": 0.8553734756,
+        "roughnessFactor": 0.4921875
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "mesh_353921321_material_15___10864_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "mesh_353921321_material_9___10864_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "mesh_353921321_material_23___10864_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6
+          },
+          "indices": 8,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "c7e82af49c7e47ac89f014391e80c1ca.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "group_1675599341"
+    },
+    {
+      "children": [
+        5,
+        6,
+        7
+      ],
+      "name": "mesh_353921321"
+    },
+    {
+      "mesh": 0,
+      "name": "mesh_353921321_material_15___10864_0"
+    },
+    {
+      "mesh": 1,
+      "name": "mesh_353921321_material_9___10864_0"
+    },
+    {
+      "mesh": 2,
+      "name": "mesh_353921321_material_23___10864_0"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

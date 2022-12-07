@@ -1,0 +1,11 @@
+Model Information:
+* title:	Alien Computer
+* source:	https://sketchfab.com/3d-models/alien-computer-bb422470b5ae426390424dc40d772717
+* author:	sirkitree (https://sketchfab.com/sirkitree)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Alien Computer" (https://sketchfab.com/3d-models/alien-computer-bb422470b5ae426390424dc40d772717) by sirkitree (https://sketchfab.com/sirkitree) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

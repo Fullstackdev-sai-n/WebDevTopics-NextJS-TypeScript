@@ -48,3 +48,30 @@ p {
 		background: black;
 	}
 }
+.home-title-animation {
+	overflow: hidden;
+	border-right: 1px solid orange;
+	white-space: nowrap;
+	margin: 0 auto;
+	letter-spacing: 0.15em;
+	animation: typing 3.5s steps(10, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 80%;
+	}
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: orange;
+	}
+}
