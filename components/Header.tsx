@@ -9,7 +9,7 @@ import logo from "../public/logo-black.svg";
 function Header({ headerHome }: any) {
 	const [clickEvent, setClickEvent] = React.useState(false);
 
-	const navItems = [
+	const navItems: any = [
 		["CSS", "/css"],
 		["JavaScript", "/javascript"],
 		["MachineLearning", "/machinelearning"],
@@ -54,7 +54,7 @@ function Header({ headerHome }: any) {
 						<MenuBookIcon className="hidden sm:block m-4 text-3xl" />
 					)}
 				</Link>
-				{navItems.map(([title, url]) => (
+				{navItems.map(([title, url]: any) => (
 					<Link
 						key={url}
 						href={url}

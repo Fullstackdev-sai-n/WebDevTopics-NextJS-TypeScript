@@ -7,7 +7,7 @@ import { Html, useGLTF } from "@react-three/drei";
 import useMediaQuery from "../utils/useMediaQuery";
 
 export default function Model(props: any) {
-	const { nodes, materials } = useGLTF("/title.glb");
+	const { nodes, materials }: any = useGLTF("/title.glb");
 	const matches = useMediaQuery("(max-width: 640px)");
 
 	console.log(matches);
@@ -17,7 +17,7 @@ export default function Model(props: any) {
 				geometry={nodes.Text.geometry}
 				material={nodes.Text.material}
 				position={matches ? [-4.24, 10, -14] : [-4.24, 3, -4]}
-				rotation={[Math.PI / 2, 0, 0]}
+				rotation={[3.14159 / 2, 0, 0]}
 			/>
 		</group>
 	);

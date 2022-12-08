@@ -8,7 +8,7 @@ export interface LayoutChildren {
 
 function Layout({ children }: LayoutChildren) {
 	const router = useRouter();
-	const path: Boolean = router.pathname === "/";
+	const path = router.pathname === "/";
 
 	return (
 		<>

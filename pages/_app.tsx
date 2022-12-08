@@ -14,14 +14,17 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	useEffect(() => {
 		if ("serviceWorker" in navigator) {
-			navigator.serviceWorker.register("/ServiceWorker.js").then(
-				function (registration) {
+			const navigatorService: any =
+				navigator.serviceWorker.register("/ServiceWorker.js");
+
+			navigatorService.then(
+				function (registration: any) {
 					console.log(
 						"Service Worker Registered Successfully",
 						registration.scope
 					);
 				},
-				function (err) {
+				function (err: any) {
 					console.log("Error while registering service worker:", err);
 				}
 			);

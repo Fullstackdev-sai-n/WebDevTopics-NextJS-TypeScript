@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose, { Error } from "mongoose";
 
-let cached = global.mongoose;
+let cached: any = global.mongoose;
 
 const MONGODB_URI: string = `mongodb+srv://stackwebdev:oE52n2tF55QnyL2G@cluster0.aren1y6.mongodb.net/StackWebDev`;
 
@@ -11,11 +11,12 @@ if (!MONGODB_URI) {
 }
 
 if (!cached) {
-	cached = global.mongoose = { conn: null, promise: null };
+	cached = { conn: null, promise: null };
 }
 
 export async function dbConnect() {
 	if (cached.conn) {
+		console.log("connected to DB!");
 		return cached.conn;
 	}
 

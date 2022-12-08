@@ -125,7 +125,7 @@ function PositionElements({
 			/>
 			<section>
 				{posts?.data?.map(
-					(entry: IEntry, index: React.Key | null | undefined) => (
+					(entry: IEntry | any, index: React.Key | null | undefined) => (
 						<div key={index}>
 							<h1 className="text-4xl sm:text-5xl">{entry.title}</h1>
 							<p className="py-4">{entry.info}</p>

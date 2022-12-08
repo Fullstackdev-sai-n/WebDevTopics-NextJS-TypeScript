@@ -4,13 +4,10 @@ import NextHead from "../utils/NextHead";
 import { lazy, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
-import Link from "next/link";
-import SpaceDust from "../components/Particles";
 
 export default function Home() {
-	const TeslaModel = lazy(() => import("../components/teslaBot"));
 	const MainTitleModel = lazy(() => import("../components/Title"));
-	const DesktopModel = lazy(() => import("../components/Desktop"));
+	const SpaceModel = lazy(() => import("../components/SpaceBoi"));
 
 	return (
 		<>
@@ -29,19 +26,21 @@ export default function Home() {
 					src={homeBg}
 					alt=""
 				/>{" "}
-				<Canvas>
-					<OrbitControls />
-					<directionalLight intensity={0.5} />
-					<ambientLight intensity={0.4} />
-					<MainTitleModel />
-				</Canvas>
-				<div className="absolute top-0 bg-green-400 opacity-60 h-full w-full">
+				<Suspense>
 					<Canvas>
 						<OrbitControls />
 						<directionalLight intensity={0.5} />
 						<ambientLight intensity={0.4} />
-
-						<DesktopModel />
+						<MainTitleModel />
+					</Canvas>
+				</Suspense>
+				<div className="absolute top-0 bg-green-400 opacity-60 h-full w-full">
+					<div className="w-20 h-20 rounded-full bg-black absolute animate-spin left-1/2 animate-pulse top-72"></div>
+					<Canvas>
+						<OrbitControls />
+						<directionalLight intensity={0.5} />
+						<ambientLight intensity={0.4} />
+						<SpaceModel />
 					</Canvas>
 				</div>
 			</section>
