@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 
-export const getStaticProps: GetStaticProps = async () => {
-	const res: any = await fetch(`${process.env.HOST}/api/typescript-errors`);
+export const getServerSideProps: GetServerSideProps = async () => {
+	const res: any = await fetch(`${process.env.HOST}/api/typescript`);
 	const data: any = await res.json();
 
 	return {
@@ -28,9 +28,7 @@ function index({ response }: any) {
 									TypeScriptError:
 								</span>{" "}
 								<span className="text-xl sm:text-2xl font-normal text-blue-400">
-									<Link href={"/typescript-errors/" + entry._id}>
-										{entry.title}
-									</Link>
+									<Link href={`typescript/${entry._id}`}>{entry.title}</Link>
 								</span>
 							</p>
 							<p>
