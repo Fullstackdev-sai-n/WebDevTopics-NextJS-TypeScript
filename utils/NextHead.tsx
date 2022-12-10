@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NextSeo } from "next-seo";
 
 export interface IHeadProps {
@@ -11,7 +11,11 @@ export interface IHeadProps {
 
 function NextHead(props: IHeadProps) {
 	const { title, description, url, canonicalEndpoint, type } = props;
-	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+	const baseUrl = process.env.NEXT_PUBLIC_HOST;
+
+	useEffect(() => {
+		document.querySelector("html")?.setAttribute("lang", "en");
+	}, []);
 	return (
 		<>
 			<NextSeo
@@ -61,6 +65,19 @@ function NextHead(props: IHeadProps) {
 					cardType: "summary_large_image",
 				}}
 				additionalMetaTags={[
+					{
+						httpEquiv: "content-language",
+						content: "EN",
+					},
+					{
+						httpEquiv: "x-ua-compatible",
+						content: "IE=edge; chrome=1",
+					},
+					{
+						property: "article:tag",
+						content: "alt tag",
+						keyOverride: "creator1",
+					},
 					{
 						property: "article:tag",
 						content: "alt tag",
@@ -130,10 +147,6 @@ function NextHead(props: IHeadProps) {
 						property: "article:section",
 						content: "Keyword Research",
 						keyOverride: "creator14",
-					},
-					{
-						httpEquiv: "x-ua-compatible",
-						content: "IE=edge; chrome=1",
 					},
 				]}
 			/>

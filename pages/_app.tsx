@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import NProgress from "nprogress";
-import Loading from "../components/Loading";
+import Loading from "../components/loader/Loading";
 import "../node_modules/nprogress/nprogress.css";
 import Script from "next/script";
 

@@ -11,6 +11,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	const res: any = await fetch(`${process.env.HOST}/api/typescript-errors`);
 	const data: any = await res.json();
 	const response = data.data;
+
+	console.log("first", response);
 	const paths = response?.map((entry: any) => {
 		return {
 			params: {
@@ -21,7 +23,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	return {
 		paths,
-		fallback: false,
+		fallback: true,
 	};
 };
 

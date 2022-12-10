@@ -1,49 +1,83 @@
-import Image from "next/image";
-import homeBg from "../public/homeBg.jpg";
 import NextHead from "../utils/NextHead";
-import { lazy, Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Html, OrbitControls } from "@react-three/drei";
+import styles from "../styles/Home.module.css";
+import HeroCard from "../components/card";
+import { GetServerSideProps } from "next";
+import { InferGetServerSidePropsType } from "next";
+import { motion } from "framer-motion";
+import useMediaQuery from "../utils/useMediaQuery";
 
-export default function Home() {
-	const MainTitleModel = lazy(() => import("../components/Title"));
-	const SpaceModel = lazy(() => import("../components/SpaceBoi"));
-
+export default function Home({
+	content,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+	const matches = useMediaQuery("(max-width: 640px)");
+	const CardRender = content.data.slice(0, 4).map((res: any, index: any) => {
+		return (
+			<motion.div
+				initial={
+					index === 0
+						? { opacity: 0, x: !matches ? 100 : 0, y: matches ? 100 : 0 }
+						: index === 3
+						? { opacity: 0, x: !matches ? -100 : 0, y: matches ? -100 : 0 }
+						: { opacity: 0 }
+				}
+				animate={
+					index === 0
+						? { opacity: 1, x: 0, y: 0 }
+						: index === 3
+						? { opacity: 1, x: 0, y: 0 }
+						: { opacity: 1 }
+				}
+				whileHover={{
+					scale: 1.08,
+					transition: { duration: 0.4 },
+				}}
+				whileTap={{ scale: 0.9 }}
+				transition={{ duration: 1 }}
+				key={index}>
+				<HeroCard
+					title={res.cardTitle}
+					description={res.cardDesc}
+					logoText={res.logoText}
+					endpoint={res.page}
+				/>
+			</motion.div>
+		);
+	});
 	return (
 		<>
 			<NextHead
 				title="Learn FullStack development"
 				description="Here is the platform to explore new technical skills related to full stack development, machine learning concepts and updated concepts related to development"
 				url="https://stack-web-dv.s3.ap-south-1.amazonaws.com/positionimages.png"
-				canonicalEndpoint="/"
+				canonicalEndpoint=""
 				type="article"
 			/>
-			<section className="pb-10 h-screen w-screen relative">
-				<Image
-					className=""
-					layout="fill"
-					placeholder="blur"
-					src={homeBg}
-					alt=""
-				/>{" "}
-				<Suspense>
-					<Canvas>
-						<OrbitControls />
-						<directionalLight intensity={0.5} />
-						<ambientLight intensity={0.4} />
-						<MainTitleModel />
-					</Canvas>
-				</Suspense>
-				<div className="absolute top-0 bg-green-400 opacity-60 h-full w-full">
-					<div className="w-20 h-20 rounded-full bg-black absolute animate-spin left-1/2 animate-pulse top-72"></div>
-					<Canvas>
-						<OrbitControls />
-						<directionalLight intensity={0.5} />
-						<ambientLight intensity={0.4} />
-						<SpaceModel />
-					</Canvas>
+			<section className="lg:h-screen w-screen relative bg-gradient-to-r from-cyan-500 to-blue-500 px-20 py-32">
+				<motion.h1
+					initial={{ opacity: 0, scale: 0.5 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.5 }}
+					className={`${styles.title} text-5xl sm:text-6xl text-center pb-6`}>
+					Stack Web Dev
+				</motion.h1>
+
+				<div className="py-6 grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+					{CardRender}
 				</div>
+
+				{/* <div className="absolute h-screen w-full bg-green-400 opacity-60 z-0"></div> */}
 			</section>
 		</>
 	);
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+	const baseUrl = process.env.HOST;
+	const res = await fetch(`${baseUrl}/api/`);
+	const content = await res.json();
+
+	console.log(content);
+	return {
+		props: { content },
+	};
+};

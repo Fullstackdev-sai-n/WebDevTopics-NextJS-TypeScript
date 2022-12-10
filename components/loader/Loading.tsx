@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./loading.module.css";
-import logo from "../public/logo-black.svg";
+import logo from "../../public/logo-black.svg";
 
 function Loading() {
 	return (

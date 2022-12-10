@@ -4,7 +4,7 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import CloseIcon from "@mui/icons-material/Close";
 import styles from "./header.module.css";
 import Image from "next/image";
-import logo from "../public/logo-black.svg";
+import logo from "../../public/logo-black.svg";
 
 function Header({ headerHome }: any) {
 	const [clickEvent, setClickEvent] = React.useState(false);
@@ -60,8 +60,8 @@ function Header({ headerHome }: any) {
 						href={url}
 						className={
 							headerHome
-								? "rounded-sm sm:rounded-none  px-3 py-2 text-black font-medium hover:bg-slate-100 hover:text-slate-900"
-								: "rounded-sm sm:rounded-lg  px-3 py-2 text-slate-100 font-medium hover:bg-slate-100 hover:text-slate-900"
+								? "rounded-sm sm:rounded-none px-3 py-2 text-black font-medium hover:bg-slate-100/60 hover:text-slate-900"
+								: "rounded-sm sm:rounded-sm  px-3 py-2 text-slate-100 font-medium hover:bg-slate-100/60 hover:text-slate-900"
 						}>
 						{title}
 					</Link>
