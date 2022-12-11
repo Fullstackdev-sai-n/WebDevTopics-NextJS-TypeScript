@@ -24,7 +24,7 @@ function CodeBlock({ code, codeId, textBroken }: any) {
 		<div
 			id={codeId}
 			onClick={copyCode}
-			className="bg-white/[0.2] p-10 rounded-lg relative">
+			className="bg-black/[0.2] p-10 rounded-lg relative">
 			<pre
 				className={
 					textBroken

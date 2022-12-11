@@ -1,13 +1,15 @@
 import Link from "next/link";
-import React from "react";
+import React, { useRef } from "react";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import CloseIcon from "@mui/icons-material/Close";
 import styles from "./header.module.css";
 import Image from "next/image";
 import logo from "../../public/logo-black.svg";
+import logoMobile from "../../public/logo-white.svg";
 
 function Header({ headerHome }: any) {
 	const [clickEvent, setClickEvent] = React.useState(false);
+	const headerRef: any = useRef();
 
 	const navItems: any = [
 		["CSS", "/css"],
@@ -17,15 +19,18 @@ function Header({ headerHome }: any) {
 		["WebComponents", "/webcomponents"],
 	];
 
-	function menuClickHandler() {
+	function menuClickHandler(e: any) {
+		e.preventDefault();
 		setClickEvent(!clickEvent);
 	}
+
 	return (
 		<header
+			ref={headerRef}
 			className={
 				headerHome
-					? "bg-transparent absolute w-full h-16 flex align-middle px-6 z-10"
-					: "bg-slate-900 w-full h-16 flex align-middle px-6 z-10"
+					? "bg-transperant absolute w-full h-16 flex align-middle px-6 z-10"
+					: "bg-slate-900 w-full h-16 flex align-middle px-6 sticky top-0 z-50"
 			}>
 			<div
 				onClick={menuClickHandler}
@@ -35,10 +40,23 @@ function Header({ headerHome }: any) {
 				}>
 				{!clickEvent ? <MenuBookIcon className="text-3xl" /> : <CloseIcon />}
 			</div>
+			<div>
+				<Link href="/">
+					<Image
+						className="absolute left-1/3 ml-12 -top-2 sm:hidden"
+						width={80}
+						height={80}
+						src={logoMobile}
+						alt="Logo-Image"
+					/>
+				</Link>
+			</div>
 			<nav
 				className={
 					clickEvent
-						? `${styles.animDown} absolute grid left-0 px-4 pb-4 bg-inherit grid-flow-row w-full top-16 z-10`
+						? `${styles.animDown} absolute grid left-0 px-4 pb-4 ${
+								headerHome && "bg-slate-100/60"
+						  }  bg-inherit sm:bg-inherit grid-flow-row w-full top-16 z-10`
 						: "absolute hidden left-0 px-4 pb-4 sm:pb-0 sm:px-0 bg-inherit grid-flow-row w-full top-16 sm:grid sm:top-0 sm:relative sm:place-items-center sm:grid-cols-6"
 				}>
 				<Link href="/">

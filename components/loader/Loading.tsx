@@ -24,7 +24,7 @@ function Loading() {
 						<span></span>
 					</div>
 				</div>
-				<div className={`${styles.lid} border-green-500`}></div>
+
 				<div className={styles.cup}>
 					<div className={styles.loadingSpinner}>
 						<div className={styles.loaderWrapper}>

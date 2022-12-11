@@ -25,7 +25,7 @@ function Layout({ children }: LayoutChildren) {
 			) : (
 				<>
 					<Header />
-					<main className="px-6 sm:px-24 py-10">{children}</main>
+					<main className="px-6 sm:px-24 py-10 bg-black">{children}</main>
 				</>
 			)}
 		</div>
