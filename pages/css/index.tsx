@@ -123,7 +123,7 @@ function PositionElements({
 				canonicalEndpoint="css"
 				type="article"
 			/>
-			<section>
+			<section className="text-white">
 				{posts?.data?.map(
 					(entry: IEntry | any, index: React.Key | null | undefined) => (
 						<div key={index}>
@@ -188,16 +188,16 @@ function PositionElements({
 										</h3>
 										<p className="py-4">{entry?.text}</p>
 										<h4 className="text-2xl sm:text-3xl py-4">HTML</h4>
-										<div className={`${styles.postionProps}`}>
-											<code className="text-green-400 py-6  whitespace-pre-line">
+										<div className={`${styles.postionProps} break-all`}>
+											<code className="break-all text-green-400 py-6">
 												{entry?.codeHtml}
 											</code>
 										</div>
 										<h4 className="text-2xl sm:text-3xl py-4 pt-10">CSS</h4>
 										<div
-											className={`${styles.postionProps} mb-10 text-green-400`}>
+											className={`${styles.postionProps} mb-10 break-all text-green-400`}>
 											<code
-												className="text-green-400 whitespace-pre-line"
+												className="text-green-400"
 												dangerouslySetInnerHTML={{
 													__html: entry?.codeCSS,
 												}}></code>

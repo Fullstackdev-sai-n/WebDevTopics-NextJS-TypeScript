@@ -23,13 +23,13 @@ function AdEventListener({
 				canonicalEndpoint="javascript"
 				type="article"
 			/>
-			<section>
+			<section className="text-white">
 				{content.data.map((entry: any, index: any) => (
 					<div key={index} className="">
 						<h1 className="text-3xl sm:text-4xl pb-6">{entry.title}</h1>
 						<p className="">{entry?.define}</p>
 						<h3 className="py-6 text-2xl sm:text-3xl font-bold">Syntax</h3>
-						<div className="bg-white/[0.2] p-10 rounded-lg text-green-400 w-full">
+						<div className="bg-white/[0.2] p-10 rounded-lg text-green-400 w-full break-all">
 							{entry?.syntax}
 						</div>
 						<p className="py-6">{entry?.description[0]}</p>
@@ -49,7 +49,7 @@ function AdEventListener({
 											dangerouslySetInnerHTML={{
 												__html: entryNested?.text,
 											}}></div>
-										<div className="bg-white/[0.2] p-10 rounded-lg text-green-400 w-full my-6 whitespace-pre-line scr">
+										<div className="bg-white/[0.2] p-10 rounded-lg text-green-400 w-full my-6 break-all scr">
 											{entryNested.code}
 										</div>
 										<div

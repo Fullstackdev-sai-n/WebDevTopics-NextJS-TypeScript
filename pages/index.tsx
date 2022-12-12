@@ -52,12 +52,12 @@ export default function Home({
 				canonicalEndpoint=""
 				type="article"
 			/>
-			<section className="lg:h-screen w-screen relative bg-gradient-to-r from-cyan-500 to-blue-500 px-20 py-32">
+			<section className="xl:h-screen w-screen relative bg-gradient-to-r from-cyan-500 to-blue-500 px-20 py-32">
 				<motion.h1
 					initial={{ opacity: 0, scale: 0.5 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.5 }}
-					className={`${styles.title} text-5xl sm:text-6xl text-center pb-6`}>
+					className={`${styles.title} text-4xl sm:text-6xl text-center pb-6`}>
 					Stack Web Dev
 				</motion.h1>
 

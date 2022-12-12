@@ -30,7 +30,7 @@ function Header({ headerHome }: any) {
 			className={
 				headerHome
 					? "bg-transperant absolute w-full h-16 flex align-middle px-6 z-10"
-					: "bg-slate-900 w-full h-16 flex align-middle px-6 sticky top-0 z-50"
+					: "bg-slate-900 w-full h-16 grid grid-cols-3 sm:flex align-middle px-6 sticky top-0 z-50"
 			}>
 			<div
 				onClick={menuClickHandler}
@@ -38,12 +38,16 @@ function Header({ headerHome }: any) {
 				className={
 					headerHome ? "sm:hidden text-3xl mt-2 " : "sm:hidden text-3xl mt-2"
 				}>
-				{!clickEvent ? <MenuBookIcon className="text-3xl" /> : <CloseIcon />}
+				{!clickEvent ? (
+					<MenuBookIcon className="text-3xl text-white" />
+				) : (
+					<CloseIcon />
+				)}
 			</div>
-			<div>
+			<div className="m-auto">
 				<Link href="/">
 					<Image
-						className="absolute left-1/3 ml-12 -top-2 sm:hidden"
+						className="sm:hidden -mt-2"
 						width={80}
 						height={80}
 						src={logoMobile}
@@ -55,7 +59,7 @@ function Header({ headerHome }: any) {
 				className={
 					clickEvent
 						? `${styles.animDown} absolute grid left-0 px-4 pb-4 ${
-								headerHome && "bg-slate-100/60"
+								headerHome && "bg-white/70"
 						  }  bg-inherit sm:bg-inherit grid-flow-row w-full top-16 z-10`
 						: "absolute hidden left-0 px-4 pb-4 sm:pb-0 sm:px-0 bg-inherit grid-flow-row w-full top-16 sm:grid sm:top-0 sm:relative sm:place-items-center sm:grid-cols-6"
 				}>
@@ -69,7 +73,7 @@ function Header({ headerHome }: any) {
 							alt="Logo-Image"
 						/>
 					) : (
-						<MenuBookIcon className="hidden sm:block m-4 text-3xl" />
+						<MenuBookIcon className="hidden sm:block m-4 text-3xl text-white" />
 					)}
 				</Link>
 				{navItems.map(([title, url]: any) => (

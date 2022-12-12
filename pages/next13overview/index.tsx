@@ -31,7 +31,7 @@ function Next13overview({
 					<div key={index} className="">
 						<h1 className="text-3xl sm:text-4xl pb-4">{entry.title}</h1>
 						<div
-							className="nextjs-13-content"
+							className="nextjs-13-content break-words text-white"
 							dangerouslySetInnerHTML={{ __html: entry.html }}></div>
 					</div>
 				))}

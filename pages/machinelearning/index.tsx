@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-
 import { GetServerSideProps } from "next";
 import { InferGetServerSidePropsType } from "next";
 import NextHead from "../../utils/NextHead";
@@ -33,20 +32,18 @@ function MachineLearning({
 				canonicalEndpoint="machinelearning"
 				type="article"
 			/>
-			<section>
+			<section className="text-white">
 				{content.data.map((entry: IMLEntry, index: React.Key) => (
 					<div key={index} className="">
 						<h1 className="text-3xl sm:text-4xl pb-4">{entry.title}</h1>
 						<div className="grid grid-cols-2 gap-20">
-							<div className="w-full h-80 relative rounded-lg">
-								<Image
-									className="rounded-lg"
-									src={entry.heroImage}
-									layout="fill"
-									alt="ml-hero-image"
-								/>
-							</div>
-							<div></div>
+							<Image
+								className="rounded-lg"
+								src={entry.heroImage}
+								width={600}
+								height={600}
+								alt="ml-hero-image"
+							/>
 						</div>
 						<p className="text-md sm:py-6 py-4">{entry?.Introduction}</p>
 						<div

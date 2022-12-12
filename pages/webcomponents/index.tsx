@@ -28,7 +28,7 @@ function WebComponents({
 				canonicalEndpoint="webcomponents"
 				type="article"
 			/>
-			<section>
+			<section className="text-white">
 				{content.data.map((entry: IWC, index: React.Key) => (
 					<div key={index} className="">
 						<h1 className="text-3xl sm:text-4xl pb-4">{entry.title}</h1>
