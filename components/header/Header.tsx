@@ -60,7 +60,7 @@ function Header({ headerHome }: any) {
 					clickEvent
 						? `${styles.animDown} absolute grid left-0 px-4 pb-4 ${
 								headerHome && "bg-white/70"
-						  }  bg-inherit sm:bg-inherit grid-flow-row w-full top-16 z-10`
+						  } sm:bg-inherit grid-flow-row w-full top-16 z-10`
 						: "absolute hidden left-0 px-4 pb-4 sm:pb-0 sm:px-0 bg-inherit grid-flow-row w-full top-16 sm:grid sm:top-0 sm:relative sm:place-items-center sm:grid-cols-6"
 				}>
 				<Link href="/">
